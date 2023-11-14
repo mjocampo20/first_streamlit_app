@@ -59,7 +59,7 @@ except URLerror as e:
 
 #import snowflake.connector
 
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+#my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 #my_cur = my_cnx.cursor()
 #my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 #my_data_row = my_cur.fetchall()
@@ -79,7 +79,7 @@ def get_fruit_load_list():
 
 #Add a button to load the fruit
 if streamlit.button('Get Fruit Load List'):
-    my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflakes"]
+    my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"]
     my_data_rows = get_fruit_load_list()
     streamlit.dataframe(my_data_rows)
 

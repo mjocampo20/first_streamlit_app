@@ -49,6 +49,8 @@ try:
       
 except URLerror as e:
   #streamlit.error()
+  
+streamlit.stop()
 
 # write your own comment -what does the next line do? 
 #fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
@@ -56,7 +58,7 @@ except URLerror as e:
 #streamlit.dataframe(fruityvice_normalized)
 
 #import snowflake.connector
-streamlit.stop()
+
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("insert into fruit_load_list values ('from streamlit')")

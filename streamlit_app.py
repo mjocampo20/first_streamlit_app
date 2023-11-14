@@ -30,6 +30,7 @@ streamlit.write('The user entered ', fruit_choice)
 # write your own comment -what does the next line do? 
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # write your own comment - what does this do?
+
 streamlit.dataframe(fruityvice_normalized)
 
 import snowflake.connector
@@ -40,3 +41,5 @@ my_cur.execute("select * from fruit_load_list")
 my_data_row = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_row)
+add_my_fruit = streamlit.text_input('What would you like to add?', 'jackfruit')
+streamlit.write('Thanks for adding jackfuit' , add_my_fruit)
